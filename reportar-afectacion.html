@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reportar afectación — Censo Odontológico 10A</title>
+<meta name="description" content="Reporta cómo el sismo del 10 de agosto de 2026 afectó tu situación personal o tu establecimiento odontológico.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/forms.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<nav class="site-nav" aria-label="Navegación principal">
+  <div class="site-nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-name">Censo Odontológico 10A</span>
+      <span class="brand-tag mono">VÉRTICE LATAM · Iniciativa gremial</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="reportar-afectacion.html" aria-current="page">Reportar afectación</a>
+      <a href="necesito-ayuda.html">Necesito ayuda</a>
+      <a href="quiero-ayudar.html">Quiero ayudar</a>
+      <a href="sobre-el-proyecto.html">Sobre el proyecto</a>
+      <a href="privacidad.html">Privacidad</a>
+    </div>
+    <button class="menu-btn mono" aria-label="Abrir menú" aria-expanded="false">≡ MENÚ</button>
+  </div>
+</nav>
+
+<main id="main" class="form-main">
+  <div class="wrap-narrow">
+
+    <div class="trust-box" id="trustBox">
+      <h2>Antes de empezar</h2>
+      <dl>
+        <dt>¿Qué es esto?</dt>
+        <dd>El Censo Odontológico 10A es un ejercicio de caracterización del impacto del sismo del 10 de agosto de 2026 sobre el sector odontológico colombiano.</dd>
+        <dt>¿Quién lo impulsa?</dt>
+        <dd>Es una iniciativa privada y gremial de Vértice LATAM. No es una entidad gubernamental ni un registro oficial de damnificados.</dd>
+        <dt>¿Para qué se usará mi información?</dt>
+        <dd>Para construir estadísticas agregadas del sector y, si tú lo autorizas, para conectarte con quienes ofrecen ayuda.</dd>
+        <dt>¿Es obligatorio participar?</dt>
+        <dd>No. Tu participación es completamente voluntaria y puedes dejar de responder en cualquier momento.</dd>
+        <dt>¿Cómo se protegen mis datos?</dt>
+        <dd>Tus datos de contacto se guardan por separado de la información estadística, y solo un equipo mínimo tiene acceso a ellos. Ver <a href="privacidad.html">Política de Privacidad</a>.</dd>
+      </dl>
+      <button type="button" class="btn btn-primary" id="startBtn">Empezar reporte →</button>
+    </div>
+
+    <div id="formArea" hidden>
+      <div class="progress-shell">
+        <div class="progress-meta">
+          <span class="mono" id="stepLabel">Paso 1 de —</span>
+          <span id="stepSection">Identificación</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+      <div id="formRoot"></div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap-narrow">
+    <p class="foot-disclaimer">
+      Censo Odontológico 10A — iniciativa privada y gremial de Vértice LATAM. No es un registro
+      oficial de damnificados y no sustituye los registros de las autoridades competentes.
+    </p>
+  </div>
+</footer>
+
+<script src="js/catalogos.js"></script>
+<script src="js/app.js"></script>
+<script src="js/api.js"></script>
+<script src="js/formulario-afectacion.js"></script>
+<script>
+  // El formulario se construye oculto (formulario-afectacion.js ya llamó a render());
+  // solo lo mostramos cuando el usuario confirma que leyó el bloque de confianza.
+  document.getElementById("startBtn").addEventListener("click", function () {
+    document.getElementById("trustBox").hidden = true;
+    document.getElementById("formArea").hidden = false;
+    document.getElementById("formArea").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>
+</body>
+</html>
