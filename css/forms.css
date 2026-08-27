@@ -1,0 +1,243 @@
+/* ==========================================================
+   CENSO ODONTOLÓGICO 10A — forms.css
+   Estilos del motor de formularios paso a paso (stepper).
+   ========================================================== */
+
+.trust-box {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  margin-bottom: 26px;
+}
+.trust-box h2 {
+  font-size: 1.15rem;
+  color: var(--teal);
+}
+.trust-box dl { margin-top: 12px; }
+.trust-box dt {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 12px;
+}
+.trust-box dt:first-child { margin-top: 0; }
+.trust-box dd {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin-top: 3px;
+}
+.trust-box .btn { margin-top: 18px; }
+
+/* progreso */
+.progress-shell { padding: 18px 0 0; }
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+.progress-track {
+  height: 6px;
+  background: var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--teal);
+  border-radius: 999px;
+  transition: width 0.35s ease;
+  width: 0%;
+}
+
+/* pregunta */
+.form-main { padding: 28px 0 60px; }
+.q-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  color: var(--brick);
+  background: var(--brick-soft);
+  padding: 5px 11px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.q-title {
+  font-size: clamp(1.3rem, 4vw, 1.65rem);
+  max-width: 28ch;
+}
+.q-help {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  max-width: 54ch;
+}
+.q-note {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--brick);
+  background: var(--brick-soft);
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.option-grid { display: grid; gap: 10px; margin-top: 22px; }
+.option-chip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.95rem;
+  color: var(--ink);
+  transition: border-color 0.15s ease, background 0.15s ease;
+  min-height: 44px;
+}
+.option-chip:hover { border-color: var(--teal); }
+.option-chip .mark {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.option-chip.multi .mark { border-radius: 5px; }
+.option-chip.selected { border-color: var(--teal); background: var(--teal-soft); }
+.option-chip.selected .mark { border-color: var(--teal); background: var(--teal); }
+.option-chip.selected .mark::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--paper);
+}
+.option-chip.multi.selected .mark::after {
+  content: '✓';
+  color: var(--paper);
+  font-size: 11px;
+  line-height: 1;
+}
+
+.otro-field { margin-top: 12px; }
+
+.field { margin-top: 20px; }
+.field label { display: block; font-size: 0.82rem; color: var(--ink-soft); margin-bottom: 6px; }
+.field .req { color: var(--brick); }
+.field input[type="text"],
+.field input[type="tel"],
+.field input[type="email"],
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background: var(--paper);
+  color: var(--ink);
+  resize: vertical;
+  min-height: 44px;
+}
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--teal); }
+.char-count { text-align: right; font-size: 0.72rem; color: var(--ink-soft); margin-top: 4px; }
+
+/* honeypot: oculto visualmente pero accesible a bots, nunca a lectores de pantalla reales */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.consent-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 18px;
+}
+.consent-row input { margin-top: 3px; width: 20px; height: 20px; accent-color: var(--teal); flex-shrink: 0; }
+.consent-row p { font-size: 0.85rem; color: var(--ink-soft); }
+.consent-row a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+
+.error-text {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--error);
+  min-height: 1.2em;
+}
+.error-text:not(:empty)::before { content: "⚠ "; }
+
+.q-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  gap: 12px;
+}
+.q-nav .btn-primary { margin-left: auto; }
+
+/* confirmación */
+.summary-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+  text-align: center;
+}
+.summary-code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.5rem;
+  background: var(--teal-soft);
+  color: var(--teal);
+  padding: 12px 18px;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 14px 0;
+  letter-spacing: 0.08em;
+}
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.82rem;
+  margin-top: 10px;
+}
+.summary-note {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-top: 14px;
+  max-width: 52ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.summary-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 24px;
+}
+.api-error-box {
+  margin-top: 18px;
+  background: var(--brick-soft);
+  color: var(--brick);
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 0.85rem;
+  text-align: left;
+}
