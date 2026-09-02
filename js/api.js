@@ -4,7 +4,7 @@
  */
 
 window.CENSO_CONFIG = {
-  API_ENDPOINT: "https://script.google.com/macros/s/AKfycbzATu7Twrz9yD-JMs4Ol87tVUcioxPaaJKnpp4Yi7lHlT2IG_MwgJ0gyBt0QdH4fO5tkA/exec",
+  API_ENDPOINT: "https://script.google.com/macros/s/AKfycbxuahac7rDR97p5gYC2i8zDOdoqUnmgCBC7Wl4yUoQiFUkO6nGT61Yk8SmAYltahYxuOQ/exec",
 
   TURNSTILE_SITE_KEY: ""
 };
